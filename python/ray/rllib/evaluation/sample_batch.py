@@ -231,6 +231,7 @@ class SampleBatch(object):
         out = {}
         samples = [s for s in samples if s.count > 0]
         for k in samples[0].keys():
+            #print("key ", k, [s[k].shape for s in samples])
             out[k] = np.concatenate([s[k] for s in samples])
         return SampleBatch(out)
 
